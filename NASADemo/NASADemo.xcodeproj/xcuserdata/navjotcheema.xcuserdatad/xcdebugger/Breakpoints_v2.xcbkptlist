@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7C0FB685-E51D-41D7-827E-85D3A99F21C5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB408916-5892-4B75-8C8C-EE1532D1286D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NASADemo/ViewModel/NasaDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "dateFormatter(dateString:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB408916-5892-4B75-8C8C-EE1532D1286D - 84b467c1be05b928"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NASADemo.NasaDetaiLViewModel.dateFormatter(dateString: Swift.String) -&gt; Swift.String"
+                  moduleName = "NASADemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navjotcheema/Documents/WorkDay/NASADemo/NASADemo/ViewModel/NasaDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "CB408916-5892-4B75-8C8C-EE1532D1286D - 84b467c1be05b928"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NASADemo.NasaDetaiLViewModel.dateFormatter(dateString: Swift.String) -&gt; Swift.String"
+                  moduleName = "NASADemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navjotcheema/Documents/WorkDay/NASADemo/NASADemo/ViewModel/NasaDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
