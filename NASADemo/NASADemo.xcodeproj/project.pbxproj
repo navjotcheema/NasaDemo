@@ -23,6 +23,7 @@
 		1725786C2A5F1813001C3AE6 /* NasaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725786B2A5F1813001C3AE6 /* NasaDetailViewModel.swift */; };
 		1725786F2A5F91F1001C3AE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725786E2A5F91F1001C3AE6 /* Constants.swift */; };
 		172578722A5F980E001C3AE6 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172578712A5F980E001C3AE6 /* DateUtility.swift */; };
+		17B042E32A60B5EE0039C46A /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = 17B042E22A60B5EE0039C46A /* Readme */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		1725786B2A5F1813001C3AE6 /* NasaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDetailViewModel.swift; sourceTree = "<group>"; };
 		1725786E2A5F91F1001C3AE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		172578712A5F980E001C3AE6 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		17B042E22A60B5EE0039C46A /* Readme */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Readme; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		170A92B32A5C7D3D008D4273 /* NASADemo */ = {
 			isa = PBXGroup;
 			children = (
+				17B042E22A60B5EE0039C46A /* Readme */,
 				172578702A5F97F4001C3AE6 /* Utility */,
 				170A92B42A5C7D3D008D4273 /* NASADemoApp.swift */,
 				1725786D2A5F91DB001C3AE6 /* Constant */,
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170A92BC2A5C7D3E008D4273 /* Preview Assets.xcassets in Resources */,
+				17B042E32A60B5EE0039C46A /* Readme in Resources */,
 				170A92B92A5C7D3E008D4273 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +513,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,6 +543,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
