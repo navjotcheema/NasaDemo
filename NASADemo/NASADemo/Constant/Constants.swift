@@ -9,10 +9,10 @@ import Foundation
 struct Constants {
     
     //Title of Main Sceen
-    static let tittle = "NASA"
+    static let title = "NASA"
     
-    //Tittle of DetailScreen
-    static let detailViewTittle =  "Description"
+    //Title of DetailScreen
+    static let detailViewTitle =  "Description"
 
     
     // No response and Error Messages

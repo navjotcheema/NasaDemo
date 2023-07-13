@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NasaDetailView: View {
-    @StateObject var viewModel:NasaDetaiLViewModel
+    @StateObject var viewModel:NasaDetailViewModel
     /*
      // Display the NASA image if avilable
      // If no item found, display a text mesage
@@ -52,7 +52,7 @@ struct NasaDetailView: View {
             
             Spacer()
         }
-        .navigationTitle(Constants.detailViewTittle)
+        .navigationTitle(Constants.detailViewTitle)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -61,7 +61,7 @@ struct NasaDetailView: View {
 struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let item = NasaItem(href: "", data: [], links: [])
-        let viewModel = NasaDetaiLViewModel(item: item)
+        let viewModel = NasaDetailViewModel(item: item)
         return NasaDetailView(viewModel: viewModel)
     }
 }

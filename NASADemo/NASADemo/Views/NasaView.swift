@@ -47,7 +47,7 @@ struct NasaView: View {
             }
             Spacer()
         }
-        .navigationTitle(Constants.tittle)
+        .navigationTitle(Constants.title)
         .task {
             searchImages()
         }
@@ -69,7 +69,7 @@ struct NasaView: View {
             } else {
                 Text(Constants.noDataFound)
             }
-            NavigationLink("", destination: NasaDetailView(viewModel: NasaDetaiLViewModel(item: item)))
+            NavigationLink("", destination: NasaDetailView(viewModel: NasaDetailViewModel(item: item)))
         }
         .padding()
     }
