@@ -34,6 +34,7 @@ struct NasaView: View {
                             .onAppear {
                                 viewModel.fetchNextPageIfNeeded(forQuery: query, item: item)
                             }
+                           
                     }
                 } else {
                     Text(Constants.noRecordsFound)

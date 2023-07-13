@@ -8,7 +8,7 @@
 
 ## Key Points
 
-1. There are a total of 2 tests for unit testing and 1 Test for UI test, which covers major functionality of the code which include Mock API Client and Fetch Image from Next page.
+1. There are a total of 2 tests for unit testing and 1 Test for UI test, which covers major functionality of the code which include Mock API Client and Fetch Image from Next paged UI test with the Titlle.
 2. The app was profiled using instrument tool, and any memory leaks that were discovered were fixed.
 3. The code is devoid of any external dependencies or third-party frameworks.
 5. To support future extension, a generalized/abstracted code has been developed.
@@ -56,3 +56,4 @@ First and foremost, the view controller will be invoked, and a reference to the 
 ## Contributors
 
 - [Navjot Singh Cheema](https://www.linkedin.com/in/cheemanavjot)
+- Github link: https://github.com/navjotcheema/NasaDemo.git
