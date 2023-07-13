@@ -8,21 +8,31 @@
 import Foundation
 class NasaViewModel: ObservableObject {
 
- 
+    // Array to hold Nasa Items
     @Published var items: [NasaItem] = []
+    
+    //Number of items to fetch in each page
     private var nextPageOffset = 10
+    
+    //Flag to track loading state
     private var isLoading = false
+    
+    //Currentpage number
     private var currentPage: Int = 1
+    
+    //API client for network requests
     private let apiClient: APIClientProtocol
     
     init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
     }
     
+    //Check if items array is not empty
     var hasItems: Bool {
         !items.isEmpty
     }
     
+    //Method to fetch the next page of items if needed
     func fetchNextPageIfNeeded(forQuery query: String, item: NasaItem) {
         guard !isLoading,
             let index = items.firstIndex(of: item),
@@ -32,11 +42,13 @@ class NasaViewModel: ObservableObject {
         fetchImages(forQuery: query)
     }
     
+    //Method to search the images based on quesry
     func searchImages(forQuery query: String) {
         currentPage =  1
         fetchImages(forQuery: query)
     }
     
+    //Method to fecth the images  for a given query and page
     func fetchImages(forQuery query: String) {
         isLoading = true
         let path = "search?q=\(query)&media_type=image&page=\(currentPage)"

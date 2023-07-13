@@ -64,6 +64,9 @@ extension NasaItem {
         URL(string: links.first?.href ?? "")
     }
     var date :String? {
-        data.first?.dateCreated
+        
+        let dateUtilty =  DateUtility()
+        let formatterDate = dateUtilty.formatDate(dateString: data.first?.dateCreated ?? "")
+        return formatterDate
     }
 }

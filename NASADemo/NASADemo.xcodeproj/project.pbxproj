@@ -21,6 +21,8 @@
 		172578682A5E1B77001C3AE6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172578672A5E1B77001C3AE6 /* APIClient.swift */; };
 		1725786A2A5E1B84001C3AE6 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172578692A5E1B84001C3AE6 /* APIRequest.swift */; };
 		1725786C2A5F1813001C3AE6 /* NasaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725786B2A5F1813001C3AE6 /* NasaDetailViewModel.swift */; };
+		1725786F2A5F91F1001C3AE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725786E2A5F91F1001C3AE6 /* Constants.swift */; };
+		172578722A5F980E001C3AE6 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172578712A5F980E001C3AE6 /* DateUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		172578672A5E1B77001C3AE6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		172578692A5E1B84001C3AE6 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		1725786B2A5F1813001C3AE6 /* NasaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDetailViewModel.swift; sourceTree = "<group>"; };
+		1725786E2A5F91F1001C3AE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		172578712A5F980E001C3AE6 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 		170A92B32A5C7D3D008D4273 /* NASADemo */ = {
 			isa = PBXGroup;
 			children = (
+				172578702A5F97F4001C3AE6 /* Utility */,
 				170A92B42A5C7D3D008D4273 /* NASADemoApp.swift */,
+				1725786D2A5F91DB001C3AE6 /* Constant */,
 				174260A82A5C95910046DEF5 /* Model */,
 				174260A22A5C94E00046DEF5 /* Views */,
 				172578602A5D136B001C3AE6 /* ViewModel */,
@@ -160,6 +166,22 @@
 				1725786B2A5F1813001C3AE6 /* NasaDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1725786D2A5F91DB001C3AE6 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				1725786E2A5F91F1001C3AE6 /* Constants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		172578702A5F97F4001C3AE6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				172578712A5F980E001C3AE6 /* DateUtility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		174260A22A5C94E00046DEF5 /* Views */ = {
@@ -312,9 +334,11 @@
 			files = (
 				172578522A5CA5FD001C3AE6 /* NasaDetailView.swift in Sources */,
 				172578642A5D148F001C3AE6 /* NasaView.swift in Sources */,
+				172578722A5F980E001C3AE6 /* DateUtility.swift in Sources */,
 				172578682A5E1B77001C3AE6 /* APIClient.swift in Sources */,
 				172578622A5D137D001C3AE6 /* NasaViewModel.swift in Sources */,
 				1725786A2A5E1B84001C3AE6 /* APIRequest.swift in Sources */,
+				1725786F2A5F91F1001C3AE6 /* Constants.swift in Sources */,
 				172578592A5D1107001C3AE6 /* NasaImageSearchResponseModel.swift in Sources */,
 				1725786C2A5F1813001C3AE6 /* NasaDetailViewModel.swift in Sources */,
 				170A92B52A5C7D3D008D4273 /* NASADemoApp.swift in Sources */,

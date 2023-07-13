@@ -9,28 +9,39 @@ import SwiftUI
 
 struct NasaDetailView: View {
     @StateObject var viewModel:NasaDetaiLViewModel
-    var body: some View {
+    /*
+     // Display the NASA image if avilable
+     // If no item found, display a text mesage
+     // Display the title of the Nasa Item
+     // Format and display the created date of the Nasa Item
+     // Display description of teh Nasa Item
+    */
+     var body: some View {
         VStack {
-           
+            ScrollView {
             if let imageUrl = viewModel.item.imageUrl{
                 NasaImage(imageURL: imageUrl)
                     .offset(y: 10)
                     .padding(.bottom, 0)
                     .frame(height: 300)
             } else {
-                Text("No Image Found")
+                Text(Constants.noImageFound)
             }
-            ScrollView {
+           
             VStack(alignment: .leading) {
                 Text(viewModel.item.title  ?? "")
                     .font(.title)
                 
-                Divider()
                 
-               
-                let createdDate =  viewModel.dateFormatter(dateString: viewModel.item.date ?? "")
-                Text(createdDate)
-                    .font(.title2)
+                
+                if let createdDate =  viewModel.item.date {
+                    Text(createdDate)
+                        .font(.title3)
+                }
+              else
+                {
+                  Text("No Date Found")
+              }
                 Divider()
                
                 Text(viewModel.item.description ?? "")
@@ -41,11 +52,12 @@ struct NasaDetailView: View {
             
             Spacer()
         }
-        .navigationTitle("Description")
+        .navigationTitle(Constants.detailViewTittle)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
+// Create a  preview with the dummy data for the Nasa Item  and view model
 struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let item = NasaItem(href: "", data: [], links: [])
