@@ -61,12 +61,15 @@ extension NasaItem {
     }
     
     var imageUrl: URL? {
-        URL(string: links.first?.href ?? "")
+        guard let href = links.first?.href else {
+            return nil
+        }
+        return URL(string: href)
     }
     var date :String? {
-        
-        let dateUtilty =  DateUtility()
-        let formatterDate = dateUtilty.formatDate(dateString: data.first?.dateCreated ?? "")
-        return formatterDate
+        guard let dateCreated = data.first?.dateCreated else {
+            return nil
+        }
+        return DateUtility.formatDate(dateString: dateCreated)
     }
 }

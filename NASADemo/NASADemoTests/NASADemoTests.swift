@@ -8,32 +8,47 @@
 import XCTest
 @testable import NASADemo
 
+fileprivate class MockApiClient: APIClientProtocol {
+    
+    var imagesPath: String?
+    
+    func searchImages(forPath path: String, completion: @escaping (Result<NasaImageSearchResponseModel, Error>) -> Void) {
+        imagesPath = path
+    }
+    
+}
+
 final class NASADemoTests: XCTestCase {
 
-    
-    
-    
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    override func setUpWithError() throws {}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    override func tearDownWithError() throws {}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testNasaViewModel_hasItems() {
+        let apiClient = MockApiClient()
+        let viewModel = NasaViewModel(apiClient: apiClient)
+        XCTAssertFalse(viewModel.hasItems)
+        viewModel.items = [.init(href: UUID().uuidString, data: [], links: [])]
+        XCTAssertTrue(viewModel.hasItems)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testNasaViewModel_fetchNextPage() {
+        let apiClient = MockApiClient()
+        let viewModel = NasaViewModel(apiClient: apiClient)
+        
+        var items = [NasaItem]()
+        for index in (1..<21) {
+            items.append(NasaItem(href: "Item \(index)", data: [], links: []))
         }
+
+        viewModel.items = items
+        XCTAssertNil(apiClient.imagesPath)
+        
+        viewModel.fetchNextPageIfNeeded(forQuery: "Test", item: .init(href: "Item 5", data: [], links: []))
+        XCTAssertNil(apiClient.imagesPath)
+        
+        viewModel.fetchNextPageIfNeeded(forQuery: "Test", item: .init(href: "Item 20", data: [], links: []))
+        XCTAssertNotNil(apiClient.imagesPath)
     }
 
 }

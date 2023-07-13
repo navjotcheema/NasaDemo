@@ -6,28 +6,22 @@
 //
 
 import Foundation
-class DateUtility {
-    // DateFormatter for parsing the input date string
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return formatter
-    }()
+final class DateUtility {
     
-    // DateFormatter for formatting the output date string
-    let outputFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
+    private static let dateFormatter = DateFormatter()
+    
+    private enum DateFormats: String {
+        case complete = "yyyy-MM-dd'T'HH:mm:ssZ"
+        case dateOnly = "yyyy-MM-dd"
+    }
     
     // Function for formatting the date string
-    func formatDate(dateString: String) -> String {
-        if let date = dateFormatter.date(from: dateString) {
-            let formattedString = outputFormatter.string(from: date)
-            return formattedString
-        } else {
+    static func formatDate(dateString: String) -> String {
+        dateFormatter.dateFormat = DateFormats.complete.rawValue
+        guard let date = dateFormatter.date(from: dateString) else {
             return "No Created Date"
         }
+        dateFormatter.dateFormat = DateFormats.dateOnly.rawValue
+        return dateFormatter.string(from: date)
     }
 }

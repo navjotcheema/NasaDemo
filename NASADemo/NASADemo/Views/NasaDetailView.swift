@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+struct ImageOffsetAndFrame {
+    static let y =  10.0
+    static let height =  300.0
+}
 struct NasaDetailView: View {
     @StateObject var viewModel:NasaDetailViewModel
     /*
@@ -21,9 +25,9 @@ struct NasaDetailView: View {
             ScrollView {
             if let imageUrl = viewModel.item.imageUrl{
                 NasaImage(imageURL: imageUrl)
-                    .offset(y: 10)
+                    .offset(y: ImageOffsetAndFrame.y)
                     .padding(.bottom, 0)
-                    .frame(height: 300)
+                    .frame(height: ImageOffsetAndFrame.height)
             } else {
                 Text(Constants.noImageFound)
             }
@@ -40,7 +44,7 @@ struct NasaDetailView: View {
                 }
               else
                 {
-                  Text("No Date Found")
+                  Text(Constants.noDataFound)
               }
                 Divider()
                
