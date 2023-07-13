@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-class NasaDetailViewModel:ObservableObject {
-   @Published var item :NasaItem
-    
+class NasaDetailViewModel: ObservableObject {
+   @Published var item: NasaItem
     init(item: NasaItem) {
         self.item = item
     }
-    }
-    
+}

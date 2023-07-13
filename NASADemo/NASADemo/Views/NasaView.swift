@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct NasaView: View {
-    //Stateobject for the view model
+    // Stateobject for the view model
     @StateObject var viewModel: NasaViewModel = NasaViewModel()
-    
-    //State Variable to store the search query
+    // State Variable to store the search query
     @State private var query: String = ""
-    
-    
     /*
      // Textfield for entering the search query
      // Call  searchImages() when the query changes
@@ -30,29 +27,26 @@ struct NasaView: View {
                 }
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-                .offset(y:10)
-            
-            if viewModel.hasItems {
-                List(viewModel.items, id:\.href) { item in
-                    nasaCell(forItem: item)
-                        .onAppear {
-                            viewModel.fetchNextPageIfNeeded(forQuery: query, item: item)
-                        }
+                .offset(y: 10)
+                if viewModel.hasItems {
+                    List(viewModel.items, id: \.href) { item in
+                        nasaCell(forItem: item)
+                            .onAppear {
+                                viewModel.fetchNextPageIfNeeded(forQuery: query, item: item)
+                            }
+                    }
+                } else {
+                    Text(Constants.noRecordsFound)
+                        .foregroundColor(.gray)
+                        .padding()
                 }
-
-            } else {
-                Text(Constants.noRecordsFound)
-                    .foregroundColor(.gray)
-                    .padding()
+                Spacer()
             }
-            Spacer()
-        }
         .navigationTitle(Constants.title)
         .task {
             searchImages()
         }
-    }
-    
+        }
     // Call nasaCell(forItem:) to create a view for each item
 
     func nasaCell(forItem item: NasaItem) -> some View {
@@ -63,7 +57,6 @@ struct NasaView: View {
             } else {
                 Text(Constants.noImageFound)
             }
-            
             if let title = item.title {
                 Text(title)
             } else {
@@ -73,7 +66,6 @@ struct NasaView: View {
         }
         .padding()
     }
-    
     // Call the view model's searchImages method to perform the search
     private func searchImages() {
         viewModel.searchImages(forQuery: query)

@@ -21,5 +21,4 @@ final class NASADemoUITests: XCTestCase {
         let title = app.staticTexts["NASA"]
         XCTAssert(title.exists)
     }
-    
 }

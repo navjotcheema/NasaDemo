@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ImageOffsetAndFrame {
-    static let y =  10.0
+struct ViewConstants {
+    static let yAxis =  10.0
     static let height =  300.0
 }
 struct NasaDetailView: View {
-    @StateObject var viewModel:NasaDetailViewModel
+    @StateObject var viewModel: NasaDetailViewModel
     /*
      // Display the NASA image if avilable
      // If no item found, display a text mesage
@@ -23,37 +23,28 @@ struct NasaDetailView: View {
      var body: some View {
         VStack {
             ScrollView {
-            if let imageUrl = viewModel.item.imageUrl{
+            if let imageUrl = viewModel.item.imageUrl {
                 NasaImage(imageURL: imageUrl)
-                    .offset(y: ImageOffsetAndFrame.y)
+                    .offset(y: ViewConstants.yAxis)
                     .padding(.bottom, 0)
-                    .frame(height: ImageOffsetAndFrame.height)
+                    .frame(height: ViewConstants.height)
             } else {
                 Text(Constants.noImageFound)
             }
-           
             VStack(alignment: .leading) {
                 Text(viewModel.item.title  ?? "")
                     .font(.title)
-                
-                
-                
                 if let createdDate =  viewModel.item.date {
                     Text(createdDate)
                         .font(.title3)
-                }
-              else
-                {
+                } else {
                   Text(Constants.noDataFound)
               }
                 Divider()
-               
                 Text(viewModel.item.description ?? "")
                 }
-
             }
             .padding()
-            
             Spacer()
         }
         .navigationTitle(Constants.detailViewTitle)
@@ -69,4 +60,3 @@ struct LandmarkDetailView_Previews: PreviewProvider {
         return NasaDetailView(viewModel: viewModel)
     }
 }
-

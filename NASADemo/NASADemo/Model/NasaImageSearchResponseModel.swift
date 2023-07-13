@@ -25,7 +25,6 @@ struct NasaItem: Codable, Equatable {
     static func == (lhs: NasaItem, rhs: NasaItem) -> Bool {
         lhs.href == rhs.href
     }
-    
     let href: String
     let data: [NasaImageData]
     let links: [NasaImageLink]
@@ -36,7 +35,7 @@ struct NasaImageData: Codable {
     let title: String
     let nasaId: String
     let dateCreated: String
-    let description :String
+    let description: String
 
     private enum CodingKeys: String, CodingKey {
         case description, title, nasaId = "nasa_id", dateCreated = "date_created"
@@ -50,23 +49,21 @@ struct NasaImageLink: Codable {
     let render: String
 }
 
-//Extension of NasaItem struct to add computed properties
+// Extension of NasaItem struct to add computed properties
 extension NasaItem {
     var title: String? {
         data.first?.title
     }
-    
     var description: String? {
         data.first?.description
     }
-    
     var imageUrl: URL? {
         guard let href = links.first?.href else {
             return nil
         }
         return URL(string: href)
     }
-    var date :String? {
+    var date: String? {
         guard let dateCreated = data.first?.dateCreated else {
             return nil
         }

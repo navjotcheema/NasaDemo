@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct NasaImage: View {
-    
-    //Url of the image
+    // Url of the image
     var imageURL: URL
-      
     /*
      // AsyncImage load image asycnhronously
      // resizeable is ised to make image resizeable
@@ -24,7 +22,6 @@ struct NasaImage: View {
                   .resizable()
                   .aspectRatio(contentMode: .fit)
                   .shadow(radius: 7)
-                  
           } placeholder: {
               // Placeholder view while the image is being loaded
               ProgressView()
@@ -36,7 +33,7 @@ struct NasaImage: View {
       static var previews: some View {
           // Example URL for preview
           let imageURL = URL(string: Constants.exampleURL)!
-          return NasaImage(imageURL:imageURL)
+          return NasaImage(imageURL: imageURL)
               .previewLayout(.fixed(width: 200, height: 200))
       }
   }
